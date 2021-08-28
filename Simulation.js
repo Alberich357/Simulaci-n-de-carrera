@@ -1,11 +1,13 @@
 class Simulation {
-    //tengo problemas con github  
+    //tengo problemas con github por eso lo subí manualmente al repositorio :(
     constructor(){
         this.Runner1 = 0;
         this.Runner2 = 0;
         this.track1 = [];
         this.track2 = [];
         console.log(this.Race());
+        console.log(this.track1);
+        console.log(this.track2);
     }
 
     Dice(){
@@ -25,6 +27,8 @@ class Simulation {
             let throw2 = this.Dice();
             this.Runner1 += this.Chances(throw1);
             this.Runner2 += this.Chances(throw2);
+            this.track1.push(this.Runner1);
+            this.track2.push(this.Runner2);
             if(this.Runner1 >= 100 && this.Runner2 >= 100){
                 i = 100 
                 return "It´s a tie";
